@@ -898,8 +898,8 @@ void TrainModel() {
     last_alpha = alpha;
     LearnVocabFromTrainFile(); // 从输入的node sequence 里提取node的信息
     LearnMpVocabFromTrainFile();//
-//    LoadTypeFromTypeFile();//提取node type
-    LoadTagFromTagFile();//提取node tag
+    LoadTypeFromTypeFile();//提取node type
+//    LoadTagFromTagFile();//提取node tag
     LoadLatFromLatFile();//提取node latitude
     LoadLonFromLonFile();//提取node lontitude
     if (output_file[0] == 0) return;
@@ -1034,8 +1034,8 @@ int main(int argc, char **argv) {
 
     vocab = (struct vocab_word *)calloc(vocab_max_size, sizeof(struct vocab_word));
     vocab_hash = (int *)calloc(vocab_hash_size, sizeof(int));
-//    node2type = (int *)calloc(vocab_hash_size, sizeof(int));
-    node2tag = (int *)calloc(vocab_hash_size, sizeof(int));
+    node2type = (int *)calloc(vocab_hash_size, sizeof(int));
+//    node2tag = (int *)calloc(vocab_hash_size, sizeof(int));
     node2lat = (real *)calloc(vocab_hash_size, sizeof(real));
     node2lon = (real *)calloc(vocab_hash_size, sizeof(real));
     mp_vocab = (struct vocab_mp*)calloc(mp_vocab_max_size, sizeof(struct vocab_mp));
@@ -1055,8 +1055,8 @@ int main(int argc, char **argv) {
     DestroyNet();
     free(vocab_hash);
     free(mp_vocab_hash);
-//    free(node2type);
-    free(node2tag);
+    free(node2type);
+//    free(node2tag);
     free(node2lat);
     free(node2lon);
     free(expTable);
